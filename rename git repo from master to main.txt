@@ -1,0 +1,28 @@
+Rename repo and make git main instead of master
+
+🧩 Auto-Rename Script for Any Repo
+
+Run these commands inside your project folder (the one already linked to GitHub):
+
+# 1️⃣ Rename the local branch from master → main
+git branch -m master main
+
+# 2️⃣ Push the renamed branch to GitHub
+git push -u origin main
+
+# 3️⃣ Change the default branch name for all future git init commands
+git config --global init.defaultBranch main
+
+# 4️⃣ (Optional) Delete the old master branch from GitHub
+git push origin --delete master
+
+🧠 What This Script Does
+Step	Command	What It Does
+1️⃣	git branch -m master main	Renames your current branch locally
+2️⃣	git push -u origin main	Uploads the new branch to GitHub
+3️⃣	git config --global init.defaultBranch main	Ensures all new repos start with main
+4️⃣	git push origin --delete master	Removes the old master branch remotely (optional but clean)
+🪄 Tip:
+
+After running it, open your GitHub repo → Settings → Branches → confirm the default branch is now main.
+If it’s not, just switch it manually there once — future pushes will automatically align with it.
